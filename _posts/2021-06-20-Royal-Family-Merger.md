@@ -1,14 +1,13 @@
 ---
 layout: post
-title: "Migration to Royal Family"
+title: "Royal Family Merger"
 ---
 
 # Royal Family Merger
 
 - Why are we doing this? To play with more active folks and get freebies! Renegade Empire has been great, but it has been stagnating a bit.
-Sad, I know, time to move on..
+  Sad, I know, time to move on...
 - Message in alliance chat or to Pepin or Cecily directly to let us know your response for merger (e.g. Yes I will merge with Royal Family) or for any comments/opinions.
-- Last updated: June 21, 2021 - Monday - 9am CT
 
 ## Phase 1
 
@@ -16,12 +15,15 @@ Sad, I know, time to move on..
 
 | Player                | Has communicated about merger | Last Active | Contribution (K) | Contributed today? | KP (M) | Notes | 
 | ---                   | ---                           | ---         | ---              | ---                | ---    | --- |
+| Pepin Stankalla       | Yes                           | Today       | 1200             | Yes                | 597    | |
 | Cecily de la Creme    | Yes                           | Today       | 382              | Yes                | 207    | |
 | Aragorn Fellux        | Yes                           | Today       | 373              | Yes                | 216    | |
 | Lord Tarkus           | Yes                           | Today       | 403              | Yes                | 181    | |
-| Mario Riucu           | Yes                           | Today       | 308              | Yes                | 146    | Speaks Spanish|
 | Billy Amann           | Yes                           | Today       | 149              | Yes                | 27     | |
+| Mario Riucu           | Yes                           | Today       | 308              | Yes                | 146    | Speaks Spanish|
 | Thyrsos Canonicca     | Yes                           | Today       | 125              | Yes                | 119    | |
+
+(stats were taken sometime June 20)
 
 ## Phase 2
 
@@ -32,7 +34,6 @@ Sad, I know, time to move on..
 
 | Player                | Has communicated about merger | Last Active | Contribution (K) | Contributed today? | KP (M) | Notes |
 | ---                   | ---                           | ---         | ---              | ---                | ---    | --- |
-| Pepin Stankalla       | Yes                           | Today       | 1200             | Yes                | 597    | |
 | Kain Rockfall         | Yes                           | Today       | 206              | Yes                | 116    | |
 | The Hung Llama        | No                            | Today       | 511              | Yes                | 200    | |
 | Txilar Pavel          | No                            | Today       | 244              | Yes                | 434    | |
