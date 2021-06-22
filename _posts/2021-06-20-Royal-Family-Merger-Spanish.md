@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Fusión de la familia real"
+title: "Fusión de la familia real (Espanol)"
 ---
 
 # Fusión de la familia real

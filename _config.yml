@@ -10,7 +10,7 @@
 # Review documentation to determine if you should use `theme` or `remote_theme`
 # https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/#installing-the-theme
 # "default", "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
-minimal_mistakes_skin: "plum"
+minimal_mistakes_skin: "dirt"
 
 # Site Settings
 locale: "en-US"
@@ -24,7 +24,7 @@ baseurl                  : ""
 repository               : "kt402/kt402.github.io"
 logo: "/assets/images/knight-640x426.jpg"
 # breadcrumbs            : false # true, false (default)
-words_per_minute: 100
+words_per_minute: 150
 search: true
 #search_full_content: # true, false (default)
 #search_provider: # lunr (default), algolia, google

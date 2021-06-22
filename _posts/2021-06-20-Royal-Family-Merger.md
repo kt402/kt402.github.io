@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Royal Family Merger"
+title: "Royal Family Merger (English)"
 ---
 
 # Royal Family Merger
