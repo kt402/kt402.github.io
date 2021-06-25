@@ -10,3 +10,5 @@ _site
 # Ruby
 /.bundle/
 /vendor/
+
+.DS_Store
