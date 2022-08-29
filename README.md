@@ -1,4 +1,4 @@
-# kt402
+# kt
 
 ## Project setup
 ```

@@ -1,0 +1,17 @@
+@import 'primevue/resources/themes/bootstrap4-light-blue/theme.css';
+@import 'primevue/resources/primevue.min.css';
+@import 'primeicons/primeicons.css';
+@import 'primeflex/primeflex.scss';
+
+//$bg-color: var(--primary-800);
+
+html {
+  font-size: 16px;
+  //background-color: $bg-color;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.p-component {
+  //font-family: Arial, Helvetica, sans-serif;
+  font-family: "Courier New", Courier, monospace;
+}
