@@ -1,24 +1,24 @@
-# kt
+# KT
 
-## Project setup
-```
-yarn install
-```
+## Dev
 
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
-
-### Compiles and minifies for production
-```
-yarn build
+```bash
+yarn install --frozen-lockfile        # install
+yarn serve                            # test locally
+yarn build                            # build for production
+yarn lint                             # lint and fix files
 ```
 
-### Lints and fixes files
-```
-yarn lint
-```
+## Extraction
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+* Python 3.10 required
+* Directory: ./extraction
+
+1. Take excel file and manually export sheet as csv file
+2. Run Python program with constants set to create the recommendations
+
+```bash
+cd extraction
+pipenv install
+pipenv run python extract.py
+```

@@ -1,39 +1,43 @@
 <template>
   <div class="home">
-    <Message severity="info">Saving 4 heroes for playoffs, so top hero used is #5.</Message>
-    <Message severity="info">
-      Recommended Flags
-      <ul>
-        <li>SC - Strategy or Courage</li>
-        <li>BSC - Brutality, Strategy, or Courage</li>
-        <li>* - Any</li>
-        <li>x - None</li>
-      </ul>
-    </Message>
-    <Message severity="info">
-      <div class="mb-2">Round-Hero; -> {{ roundHero() }}</div>
-      <div class="mb-2">Hero-Round; -> {{ heroRound() }}</div>
-      <div>Recommending strategy/courage for more top heroes, and anything (if you want to save strategy/courage) for bottom. And specifically for round 7 could also use brutality.</div>
-    </Message>
+    <Panel class="top-panel" header="AC_Dec.12.2022" :toggleable="true">
+      <table class="info">
+        <tr>
+          <td class="col1">Saving</td>
+          <td class="col2">{{ info.num_heroes_to_save }}</td>
+        </tr>
+        <tr>
+          <td class="col1">Tucking</td>
+          <td class="col2">{{ info.num_rounds_tucking }}</td>
+        </tr>
+        <tr>
+          <td class="col1">Flags</td>
+          <td class="col2">strat/courage (brut if weak)</td>
+        </tr>
+      </table>
+    </Panel>
+
     <DataTable :value="fights" responsiveLayout="scroll">
-      <Column field="round" header="Round" bodyStyle="text-align: center"></Column>
+      <Column field="round" header="Round"></Column>
       <Column field="opponent" header="Opp"></Column>
-      <Column field="recommendation_hero" header="Hero#" bodyStyle="text-align: center">
+      <Column field="recommendation_hero" header="Hero">
         <template #body="slotProps">
-          <span v-if="slotProps.data.recommendation_hero === -1">TUCK</span>
-          <span v-if="slotProps.data.recommendation_hero !== -1">{{ slotProps.data.recommendation_hero}}</span>
+          <span v-if="slotProps.data.recommendation_hero === 0">-</span>
+          <span v-if="slotProps.data.recommendation_hero !== 0">{{ slotProps.data.recommendation_hero}}</span>
         </template>
       </Column>
-<!--      <Column field="brand" header="Brand">-->
-<!--        <template #body="slotProps">-->
-<!--          <img :src="'demo/images/car/' + slotProps.data.brand + '.png'" :alt="slotProps.data.brand"  width="48px"/>-->
-<!--        </template>-->
-<!--      </Column>-->
-      <Column field="recommendation_flags" header="Flags" bodyStyle="text-align: center"></Column>
-      <Column field="server" header="Server" bodyStyle="text-align: center"></Column>
-      <Column field="power_billions" header="Power(B)" bodyStyle="text-align: center"></Column>
-      <Column field="members" header="Members" bodyStyle="text-align: center"></Column>
+      <Column field="recommendation_flags" header="Flags" bodyStyle="text-align: left"></Column>
+      <Column field="server" header="Server" bodyStyle="text-align: left"></Column>
+      <Column field="power_billions" header="Power" bodyStyle="text-align: left"></Column>
     </DataTable>
+
+    <Panel header="Round_Hero">
+      <div class="break-word">Round_Hero(*=tuck): {{ roundHero() }}</div>
+    </Panel>
+    <Panel header="Hero_Round">
+      <div class="break-word">Hero_Round(*=tuck): {{ heroRound() }}</div>
+    </Panel>
+
   </div>
 </template>
 
@@ -55,6 +59,8 @@ import Toolbar from "primevue/toolbar";
 import InputText from "primevue/inputtext";
 import ConfirmDialog from "primevue/confirmdialog";
 import Message from "primevue/message";
+import Accordion from "primevue/accordion";
+import AccordionTab from "primevue/accordiontab";
 // import firebase from "@/firebaseInit";
 import { doc, setDoc } from "firebase/firestore";
 import { getAuth, onAuthStateChanged, signInWithEmailAndPassword, User, AuthCredential, UserCredential, signOut } from "firebase/auth";
@@ -66,11 +72,12 @@ import _ from "lodash";
 @Options({
   components: {
     Button, Dialog, TabView, TabPanel, Card, Panel, Fieldset, DataTable, Column, TextArea, Toolbar,
-    ConfirmDialog, InputText, Message,
+    ConfirmDialog, InputText, Message, Accordion, AccordionTab
   },
 })
 export default class HomeView extends Vue {
-  fights = data
+  info = data
+  fights = data.rounds
 
   // login() {
   //   const auth = getAuth(firebase);
@@ -93,21 +100,29 @@ export default class HomeView extends Vue {
 
   roundHero() {
     return _
-        .map(this.fights, (fight: any) => `${fight.round}-${(fight.recommendation_hero == -1) ? 'TUCK' : fight.recommendation_hero}`)
-        .join(';');
+        .map(this.fights,
+            (fight: any) => {
+              return `${fight.round}_${(fight.recommendation_hero == 0) ? '*' : fight.recommendation_hero}`;
+            }
+        )
+        .join('|');
   }
 
   heroRound() {
     return _
-        .sortBy(this.fights, (fight: any) => fight.recommendation_hero)
-        .map((fight: any) => `${(fight.recommendation_hero == -1) ? 'TUCK' : fight.recommendation_hero}-${fight.round}`)
-        .join(';');
+        .sortBy(this.fights, (fight: any) => {
+          return (fight.recommendation_hero == 0) ? 99 : fight.recommendation_hero;
+        })
+        .map((fight: any) => {
+          return `${(fight.recommendation_hero == 0) ? '*' : fight.recommendation_hero}_${fight.round}`;
+        })
+        .join('|');
   }
 }
 
 </script>
 
-<style>
+<style lang="scss">
 .p-datatable-tbody, .p-datatable-thead {
   font-size: .8rem;
 }
@@ -115,4 +130,49 @@ export default class HomeView extends Vue {
 .p-datatable .p-datatable-tbody > tr > td {
   padding: .5rem .3rem !important;
 }
+
+.p-datatable .p-datatable-thead > tr > th {
+  padding: .5rem .3rem !important;
+}
+
+.p-card-body {
+  padding: 1rem 1rem 0.1rem 1rem !important;
+}
+
+.p-card-content {
+  padding: 0 !important;
+}
+
+.break-word {
+  overflow-wrap: anywhere;
+  word-break: break-all;
+}
+
+.info {
+  width: 100%;
+}
+
+.info {
+  tr:nth-child(odd) {
+    background-color: var(--gray-800);
+  }
+  td:nth-child(1) {
+    overflow: hidden;
+    white-space: nowrap;
+    width: 5rem;
+  }
+}
+
+.top-panel .p-panel-content {
+  padding: 0 .5rem !important;
+}
+
+.top-panel .p-panel-header {
+  padding: 0 .5rem !important;
+}
+
+.p-panel {
+  font-size: .8rem !important;
+}
+
 </style>
