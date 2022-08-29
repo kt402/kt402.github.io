@@ -1,5 +1,0 @@
----
-permalink: /exploration/
----
-
-# Exploration
