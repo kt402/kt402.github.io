@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <Panel class="top-panel" header="AC_Dec.12.2022" :toggleable="true">
+    <Panel class="top-panel" header="AC_Mar.2023" :toggleable="true">
       <table class="info">
         <tr>
           <td class="col1">Saving</td>
@@ -10,32 +10,34 @@
           <td class="col1">Tucking</td>
           <td class="col2">{{ info.num_rounds_tucking }}</td>
         </tr>
-        <tr>
-          <td class="col1">Flags</td>
-          <td class="col2">strat/courage (brut if weak)</td>
+        <tr v-for="(value, name) in info.flags_key" v-bind:key="name">
+          <td class="col1">Flag <span class="text-primary">{{ name }}</span></td>
+          <td class="col2">{{ value }}</td>
         </tr>
       </table>
     </Panel>
 
-    <DataTable :value="fights" responsiveLayout="scroll">
-      <Column field="round" header="Round"></Column>
-      <Column field="opponent" header="Opp"></Column>
-      <Column field="recommendation_hero" header="Hero">
+    <DataTable :value="fights" responsiveLayout="scroll" sortField="recommendation_heroes_sort" sort-order="1">
+      <Column field="round" header="Rd" sortable></Column>
+      <Column field="opponent" header="Opponent"></Column>
+      <Column field="recommendation_hero" header="Hero" sortable sortField="recommendation_heroes_sort">
         <template #body="slotProps">
-          <span v-if="slotProps.data.recommendation_hero === 0">-</span>
-          <span v-if="slotProps.data.recommendation_hero !== 0">{{ slotProps.data.recommendation_hero}}</span>
+          <span v-if="slotProps.data.recommendation_heroes.length === 0 ">-</span>
+          <span v-if="slotProps.data.recommendation_heroes.length !== 0">{{ slotProps.data.recommendation_heroes.join(',') }}</span>
         </template>
       </Column>
       <Column field="recommendation_flags" header="Flags" bodyStyle="text-align: left"></Column>
-      <Column field="server" header="Server" bodyStyle="text-align: left"></Column>
       <Column field="power_billions" header="Power" bodyStyle="text-align: left"></Column>
+      <Column field="members" header="Mem" bodyStyle="text-align: left"></Column>
+<!--      <Column field="server" header="Server" bodyStyle="text-align: left"></Column>-->
+<!--      <Column field="comment" header="Comm" bodyStyle="text-align: left"></Column>-->
     </DataTable>
 
     <Panel header="Round_Hero">
-      <div class="break-word">Round_Hero(*=tuck): {{ roundHero() }}</div>
+      <div class="break-word" v-html="roundHero()"></div>
     </Panel>
     <Panel header="Hero_Round">
-      <div class="break-word">Hero_Round(*=tuck): {{ heroRound() }}</div>
+      <div class="break-word" v-html="heroRound()"></div>
     </Panel>
 
   </div>
@@ -99,24 +101,43 @@ export default class HomeView extends Vue {
   // }
 
   roundHero() {
-    return _
+    const flags = _.map(this.info.flags_key, (desc, flag) => `${flag}_${desc}`).join('|')
+    const info = `round_flag_hero (*=bottom hero and no flag) (${flags}):<br><br>`;
+    const fights = _
         .map(this.fights,
             (fight: any) => {
-              return `${fight.round}_${(fight.recommendation_hero == 0) ? '*' : fight.recommendation_hero}`;
+              const heroes = fight.recommendation_heroes.join(",");
+              if (fight.recommendation_heroes.length == 0) {
+                return `${fight.round}_*`
+              } else {
+                return `${fight.round}_${fight.recommendation_flags}_${heroes}`;
+              }
             }
         )
         .join('|');
+
+    return info + fights;
   }
 
   heroRound() {
-    return _
+    const flags = _.map(this.info.flags_key, (desc, flag) => `${flag}_${desc}`).join('|')
+    const info = `hero_flag_round (*=bottom hero and no flag) (${flags}):<br><br>`;
+
+    const fights = _
         .sortBy(this.fights, (fight: any) => {
-          return (fight.recommendation_hero == 0) ? 99 : fight.recommendation_hero;
+          return fight.recommendation_heroes_sort;
         })
         .map((fight: any) => {
-          return `${(fight.recommendation_hero == 0) ? '*' : fight.recommendation_hero}_${fight.round}`;
+          const heroes = fight.recommendation_heroes.join(",");
+          if (fight.recommendation_heroes.length == 0) {
+            return `*_${fight.round}`
+          } else {
+            return `${heroes}_${fight.recommendation_flags}_${fight.round}`;
+          }
         })
         .join('|');
+
+    return info + fights;
   }
 }
 
@@ -173,6 +194,11 @@ export default class HomeView extends Vue {
 
 .p-panel {
   font-size: .8rem !important;
+}
+
+.p-datatable .p-sortable-column .p-sortable-column-icon {
+  font-size: .65rem !important;
+  margin-left: 0 !important;
 }
 
 </style>

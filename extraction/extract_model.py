@@ -7,8 +7,12 @@ class ACRound:
     opponent: str
     server: str
     power_billions: float
-    recommendation_hero: int
+    members: str
+    recommendation_heroes: [int]
+    recommendation_heroes_sort: int
     recommendation_flags: str
+    comment: str
+
 
 
 @dataclass
@@ -18,3 +22,9 @@ class Recommendations:
     additional_strategies: str
     flags_key: dict[str:str]
     rounds: list[ACRound]
+
+
+@dataclass
+class FlagRec:
+    rec: str
+    rounds: [int]
