@@ -21,7 +21,7 @@ FLAGS_RECS = [
 DEFAULT_FLAG_REC = "any"
 FLAGS_KEY = {
     "S": "strategy",
-    "SC": "strat-or-courage-brut-if-weak"
+    "SC": "strategy or courage preferred, but brutality if weak"
 }
 
 COL_IDX_ROUND = 0

@@ -4,7 +4,7 @@ export const data = {
   "additional_strategies": "Flags - use strategy or courage (or brutality if weak) for all rounds except for rounds we are dropping",
   "flags_key": {
     "S": "strategy",
-    "SC": "strat-or-courage-brut-if-weak"
+    "SC": "strategy or courage preferred, but brutality if weak"
   },
   "rounds": [
     {
