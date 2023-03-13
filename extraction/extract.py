@@ -7,7 +7,7 @@ from extraction.extract_model import Recommendations, ACRound, FlagRec
 
 
 FILENAME = "2023-03-ac.csv"
-NUM_HEROES_TO_SAVE = 2
+NUM_HEROES_TO_SAVE = 4
 NUM_ROUNDS_TO_TUCK = 6
 
 ADDITIONAL_STRATEGIES = \

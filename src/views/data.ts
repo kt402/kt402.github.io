@@ -1,5 +1,5 @@
 export const data = {
-  "num_heroes_to_save": 2,
+  "num_heroes_to_save": 4,
   "num_rounds_tucking": 6,
   "additional_strategies": "Flags - use strategy or courage (or brutality if weak) for all rounds except for rounds we are dropping",
   "flags_key": {
@@ -14,9 +14,9 @@ export const data = {
       "power_billions": 80.0,
       "members": "26",
       "recommendation_heroes": [
-        17
+        19
       ],
-      "recommendation_heroes_sort": 17,
+      "recommendation_heroes_sort": 19,
       "recommendation_flags": "SC",
       "comment": "easy"
     },
@@ -38,10 +38,10 @@ export const data = {
       "power_billions": 172.0,
       "members": "41",
       "recommendation_heroes": [
-        9,
-        10
+        11,
+        12
       ],
-      "recommendation_heroes_sort": 9,
+      "recommendation_heroes_sort": 11,
       "recommendation_flags": "S",
       "comment": ""
     },
@@ -63,9 +63,9 @@ export const data = {
       "power_billions": 25.0,
       "members": "14",
       "recommendation_heroes": [
-        22
+        24
       ],
-      "recommendation_heroes_sort": 22,
+      "recommendation_heroes_sort": 24,
       "recommendation_flags": "any",
       "comment": "easy"
     },
@@ -76,9 +76,9 @@ export const data = {
       "power_billions": 25.0,
       "members": "14",
       "recommendation_heroes": [
-        23
+        25
       ],
-      "recommendation_heroes_sort": 23,
+      "recommendation_heroes_sort": 25,
       "recommendation_flags": "any",
       "comment": "easy"
     },
@@ -89,9 +89,9 @@ export const data = {
       "power_billions": 57.0,
       "members": "29",
       "recommendation_heroes": [
-        18
+        20
       ],
-      "recommendation_heroes_sort": 18,
+      "recommendation_heroes_sort": 20,
       "recommendation_flags": "SC",
       "comment": "easy"
     },
@@ -102,9 +102,9 @@ export const data = {
       "power_billions": 2.63,
       "members": "24",
       "recommendation_heroes": [
-        26
+        28
       ],
-      "recommendation_heroes_sort": 26,
+      "recommendation_heroes_sort": 28,
       "recommendation_flags": "any",
       "comment": "easy"
     },
@@ -115,9 +115,9 @@ export const data = {
       "power_billions": 83.0,
       "members": "38",
       "recommendation_heroes": [
-        15
+        17
       ],
-      "recommendation_heroes_sort": 15,
+      "recommendation_heroes_sort": 17,
       "recommendation_flags": "SC",
       "comment": "easy"
     },
@@ -128,10 +128,10 @@ export const data = {
       "power_billions": 208.0,
       "members": "42",
       "recommendation_heroes": [
-        3,
-        4
+        5,
+        6
       ],
-      "recommendation_heroes_sort": 3,
+      "recommendation_heroes_sort": 5,
       "recommendation_flags": "S",
       "comment": ""
     },
@@ -142,9 +142,9 @@ export const data = {
       "power_billions": 43.0,
       "members": "20",
       "recommendation_heroes": [
-        19
+        21
       ],
-      "recommendation_heroes_sort": 19,
+      "recommendation_heroes_sort": 21,
       "recommendation_flags": "SC",
       "comment": "easy"
     },
@@ -155,10 +155,10 @@ export const data = {
       "power_billions": 172.0,
       "members": "41",
       "recommendation_heroes": [
-        11,
-        12
+        13,
+        14
       ],
-      "recommendation_heroes_sort": 11,
+      "recommendation_heroes_sort": 13,
       "recommendation_flags": "S",
       "comment": ""
     },
@@ -180,9 +180,9 @@ export const data = {
       "power_billions": 133.0,
       "members": "39",
       "recommendation_heroes": [
-        13
+        15
       ],
-      "recommendation_heroes_sort": 13,
+      "recommendation_heroes_sort": 15,
       "recommendation_flags": "SC",
       "comment": ""
     },
@@ -193,9 +193,9 @@ export const data = {
       "power_billions": 120.0,
       "members": "30",
       "recommendation_heroes": [
-        14
+        16
       ],
-      "recommendation_heroes_sort": 14,
+      "recommendation_heroes_sort": 16,
       "recommendation_flags": "SC",
       "comment": ""
     },
@@ -206,9 +206,9 @@ export const data = {
       "power_billions": 20.0,
       "members": "20",
       "recommendation_heroes": [
-        24
+        26
       ],
-      "recommendation_heroes_sort": 24,
+      "recommendation_heroes_sort": 26,
       "recommendation_flags": "any",
       "comment": "easy"
     },
@@ -219,9 +219,9 @@ export const data = {
       "power_billions": 83.0,
       "members": "42",
       "recommendation_heroes": [
-        16
+        18
       ],
-      "recommendation_heroes_sort": 16,
+      "recommendation_heroes_sort": 18,
       "recommendation_flags": "SC",
       "comment": "easy"
     },
@@ -232,10 +232,10 @@ export const data = {
       "power_billions": 208.0,
       "members": "42",
       "recommendation_heroes": [
-        5,
-        6
+        7,
+        8
       ],
-      "recommendation_heroes_sort": 5,
+      "recommendation_heroes_sort": 7,
       "recommendation_flags": "S",
       "comment": ""
     },
@@ -246,9 +246,9 @@ export const data = {
       "power_billions": 3.2,
       "members": "3",
       "recommendation_heroes": [
-        25
+        27
       ],
-      "recommendation_heroes_sort": 25,
+      "recommendation_heroes_sort": 27,
       "recommendation_flags": "any",
       "comment": "easy"
     },
@@ -259,10 +259,10 @@ export const data = {
       "power_billions": 208.0,
       "members": "42",
       "recommendation_heroes": [
-        7,
-        8
+        9,
+        10
       ],
-      "recommendation_heroes_sort": 7,
+      "recommendation_heroes_sort": 9,
       "recommendation_flags": "S",
       "comment": ""
     },
@@ -295,9 +295,9 @@ export const data = {
       "power_billions": 36.4,
       "members": "",
       "recommendation_heroes": [
-        20
+        22
       ],
-      "recommendation_heroes_sort": 20,
+      "recommendation_heroes_sort": 22,
       "recommendation_flags": "SC",
       "comment": "easy"
     },
@@ -308,9 +308,9 @@ export const data = {
       "power_billions": 29.0,
       "members": "27",
       "recommendation_heroes": [
-        21
+        23
       ],
-      "recommendation_heroes_sort": 21,
+      "recommendation_heroes_sort": 23,
       "recommendation_flags": "any",
       "comment": "easy"
     },
