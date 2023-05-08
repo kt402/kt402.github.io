@@ -148,7 +148,7 @@ export default class HomeView extends Vue {
     const fights = _
         .map(this.fights,
             (fight: any) => {
-              const heroes = fight.recommendation_heroes.join("&1");
+              const heroes = fight.recommendation_heroes.join("&");
               if (fight.recommendation_heroes.length == 0) {
                 return `${fight.round}_T`
               } else {
