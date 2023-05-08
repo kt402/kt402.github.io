@@ -1,14 +1,18 @@
 <template>
   <div class="home">
-    <Panel class="top-panel" header="AC_Mar.2023" :toggleable="true">
+    <Panel class="top-panel" :header="info.header" :toggleable="true">
       <table class="info">
         <tr>
-          <td class="col1">Saving</td>
+          <td class="col1">Num Top Heroes Save</td>
           <td class="col2">{{ info.num_heroes_to_save }}</td>
         </tr>
         <tr>
-          <td class="col1">Tucking</td>
+          <td class="col1">Num Tucking Rounds</td>
           <td class="col2">{{ info.num_rounds_tucking }}</td>
+        </tr>
+        <tr>
+          <td class="col1">Num Exception Rounds</td>
+          <td class="col2">{{ info.num_exception_rounds }}</td>
         </tr>
         <tr v-for="(value, name) in info.flags_key" v-bind:key="name">
           <td class="col1">Flag <span class="text-primary">{{ name }}</span></td>
@@ -17,8 +21,11 @@
       </table>
     </Panel>
 
-    <Panel header="To paste into alliance chat/board" class="p">
+    <Panel header="For alliance chat/board" class="p">
       <div class="break-word" v-html="summary()"></div>
+    </Panel>
+
+    <Panel header="Click on Rd and Hero columns to sort" class="p">
     </Panel>
 
     <DataTable :value="fights" responsiveLayout="scroll" sortField="recommendation_heroes_sort" sort-order="1">
@@ -117,16 +124,13 @@ export default class HomeView extends Vue {
         });
 
     const summ = `
-      https://kt402.github.io - for more detailed recommendations<br><br>
-
-      Saving top ${this.info.num_heroes_to_save} heroes. Skipping ${this.info.num_rounds_tucking} toughest opponents.<br><br>
-
-      Start with hero #${this.info.num_heroes_to_save + 1} for rounds: ${rounds.join(',')}.<br><br>
-
-      For example, hero #${this.info.num_heroes_to_save + 1} for round ${rounds[0]},
-                   hero #${this.info.num_heroes_to_save + 2} for round ${rounds[1]}, etc.<br><br>
-
-      Flag recommendations - for toughest opponents, use strategy. Mid-range opponents, use strategy or courage (or brutality if your hero is weak). Low-end opponents, use any.
+      |round_hero| -> ${this.roundHero()}
+      <br><br>
+      |hero_round| -> ${this.heroRound()}
+      <br><br>
+      ${this.info.additional_strategies}
+      <br><br>
+      https://kt402.github.io for more details.
     `;
 /*
 <td class="col2">{{ info.num_heroes_to_save }}</td>
@@ -144,17 +148,17 @@ export default class HomeView extends Vue {
     const fights = _
         .map(this.fights,
             (fight: any) => {
-              const heroes = fight.recommendation_heroes.join(",");
+              const heroes = fight.recommendation_heroes.join("&1");
               if (fight.recommendation_heroes.length == 0) {
-                return `${fight.round}_*`
+                return `${fight.round}_T`
               } else {
-                return `${fight.round}_${fight.recommendation_flags}_${heroes}`;
+                return `${fight.round}_${heroes}`;
               }
             }
         )
         .join('|');
 
-    return info + fights;
+    return fights;
   }
 
   heroRound() {
@@ -166,16 +170,16 @@ export default class HomeView extends Vue {
           return fight.recommendation_heroes_sort;
         })
         .map((fight: any) => {
-          const heroes = fight.recommendation_heroes.join(",");
+          const heroes = fight.recommendation_heroes.join("&");
           if (fight.recommendation_heroes.length == 0) {
-            return `*_${fight.round}`
+            return `T_${fight.round}`
           } else {
-            return `${heroes}_${fight.recommendation_flags}_${fight.round}`;
+            return `${heroes}_${fight.round}`;
           }
         })
         .join('|');
 
-    return info + fights;
+    return fights;
   }
 }
 

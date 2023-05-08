@@ -1,132 +1,21 @@
 export const data = {
-  "num_heroes_to_save": 4,
-  "num_rounds_tucking": 6,
-  "additional_strategies": "Flags - use strategy or courage (or brutality if weak) for all rounds except for rounds we are dropping",
+  "header": "MAY-2023",
+  "num_heroes_to_save": 1,
+  "num_rounds_tucking": 7,
+  "num_exception_rounds": 3,
+  "additional_strategies": "Use strategy for rounds where 2 heroes are denoted. Then courage is preferred.<br><br>We are tucking 7 rounds. 3 very tough rounds we are going hard. Rest is more normal planning.<br>Hitz - use some yellow flags where you see fit.<br>Seren - some of the tougher opponents you can use brutality and medium hero.",
   "flags_key": {
     "S": "strategy",
-    "SC": "strategy or courage preferred, but brutality if weak"
+    "C": "courage",
+    "*": "any"
   },
   "rounds": [
     {
       "round": 1,
-      "opponent": "gods of war",
-      "server": "365",
-      "power_billions": 80.0,
-      "members": "26",
-      "recommendation_heroes": [
-        19
-      ],
-      "recommendation_heroes_sort": 19,
-      "recommendation_flags": "SC",
-      "comment": "easy"
-    },
-    {
-      "round": 2,
-      "opponent": "firelink",
-      "server": "386",
-      "power_billions": 374.0,
-      "members": "43",
-      "recommendation_heroes": [],
-      "recommendation_heroes_sort": 99,
-      "recommendation_flags": "*",
-      "comment": "tuck"
-    },
-    {
-      "round": 3,
-      "opponent": "knig hannover",
-      "server": "300",
-      "power_billions": 172.0,
-      "members": "41",
-      "recommendation_heroes": [
-        11,
-        12
-      ],
-      "recommendation_heroes_sort": 11,
-      "recommendation_flags": "S",
-      "comment": ""
-    },
-    {
-      "round": 4,
-      "opponent": "camelot",
-      "server": "386",
-      "power_billions": 277.0,
-      "members": "43",
-      "recommendation_heroes": [],
-      "recommendation_heroes_sort": 99,
-      "recommendation_flags": "*",
-      "comment": ""
-    },
-    {
-      "round": 5,
-      "opponent": "broch tuarach",
-      "server": "348",
-      "power_billions": 25.0,
-      "members": "14",
-      "recommendation_heroes": [
-        24
-      ],
-      "recommendation_heroes_sort": 24,
-      "recommendation_flags": "any",
-      "comment": "easy"
-    },
-    {
-      "round": 6,
-      "opponent": "broch tuarach",
-      "server": "348",
-      "power_billions": 25.0,
-      "members": "14",
-      "recommendation_heroes": [
-        25
-      ],
-      "recommendation_heroes_sort": 25,
-      "recommendation_flags": "any",
-      "comment": "easy"
-    },
-    {
-      "round": 7,
-      "opponent": "legion - awolves",
+      "opponent": "clestial dragons",
       "server": "409",
-      "power_billions": 57.0,
-      "members": "29",
-      "recommendation_heroes": [
-        20
-      ],
-      "recommendation_heroes_sort": 20,
-      "recommendation_flags": "SC",
-      "comment": "easy"
-    },
-    {
-      "round": 8,
-      "opponent": "blood masters",
-      "server": "336",
-      "power_billions": 2.63,
-      "members": "24",
-      "recommendation_heroes": [
-        28
-      ],
-      "recommendation_heroes_sort": 28,
-      "recommendation_flags": "any",
-      "comment": "easy"
-    },
-    {
-      "round": 9,
-      "opponent": "vikings",
-      "server": "381",
-      "power_billions": 83.0,
-      "members": "38",
-      "recommendation_heroes": [
-        17
-      ],
-      "recommendation_heroes_sort": 17,
-      "recommendation_flags": "SC",
-      "comment": "easy"
-    },
-    {
-      "round": 10,
-      "opponent": "troy ",
-      "server": "391",
-      "power_billions": 208.0,
-      "members": "42",
+      "power_billions": 507.0,
+      "members": "43",
       "recommendation_heroes": [
         5,
         6
@@ -136,24 +25,59 @@ export const data = {
       "comment": ""
     },
     {
-      "round": 11,
-      "opponent": "carnage legion",
-      "server": "370",
-      "power_billions": 43.0,
-      "members": "20",
+      "round": 2,
+      "opponent": "chaos rising",
+      "server": "616",
+      "power_billions": 533.0,
+      "members": "43",
+      "recommendation_heroes": [],
+      "recommendation_heroes_sort": 99,
+      "recommendation_flags": "-",
+      "comment": ""
+    },
+    {
+      "round": 3,
+      "opponent": "blackgate asylum",
+      "server": "634",
+      "power_billions": 75.0,
+      "members": "25",
+      "recommendation_heroes": [
+        24
+      ],
+      "recommendation_heroes_sort": 24,
+      "recommendation_flags": "*",
+      "comment": ""
+    },
+    {
+      "round": 4,
+      "opponent": "firehawx",
+      "server": "324",
+      "power_billions": 331.0,
+      "members": "42",
+      "recommendation_heroes": [],
+      "recommendation_heroes_sort": 99,
+      "recommendation_flags": "-",
+      "comment": ""
+    },
+    {
+      "round": 5,
+      "opponent": "seriously fluffy",
+      "server": "616",
+      "power_billions": 119.0,
+      "members": "41",
       "recommendation_heroes": [
         21
       ],
       "recommendation_heroes_sort": 21,
-      "recommendation_flags": "SC",
-      "comment": "easy"
+      "recommendation_flags": "C",
+      "comment": ""
     },
     {
-      "round": 12,
-      "opponent": "knig hannover",
-      "server": "300",
-      "power_billions": 172.0,
-      "members": "41",
+      "round": 6,
+      "opponent": "the roman hearts",
+      "server": "535",
+      "power_billions": 200.0,
+      "members": "40",
       "recommendation_heroes": [
         13,
         14
@@ -163,100 +87,47 @@ export const data = {
       "comment": ""
     },
     {
-      "round": 13,
-      "opponent": "dark empire",
-      "server": "403",
-      "power_billions": 535.0,
+      "round": 7,
+      "opponent": "dark templars",
+      "server": "381",
+      "power_billions": 146.0,
+      "members": "38",
+      "recommendation_heroes": [
+        19
+      ],
+      "recommendation_heroes_sort": 19,
+      "recommendation_flags": "C",
+      "comment": ""
+    },
+    {
+      "round": 8,
+      "opponent": "the ice box",
+      "server": "352",
+      "power_billions": 610.0,
       "members": "43",
       "recommendation_heroes": [],
       "recommendation_heroes_sort": 99,
-      "recommendation_flags": "*",
-      "comment": "tuck"
-    },
-    {
-      "round": 14,
-      "opponent": "snipers",
-      "server": "348",
-      "power_billions": 133.0,
-      "members": "39",
-      "recommendation_heroes": [
-        15
-      ],
-      "recommendation_heroes_sort": 15,
-      "recommendation_flags": "SC",
+      "recommendation_flags": "-",
       "comment": ""
     },
     {
-      "round": 15,
-      "opponent": "rebels",
-      "server": "403",
-      "power_billions": 120.0,
-      "members": "30",
-      "recommendation_heroes": [
-        16
-      ],
-      "recommendation_heroes_sort": 16,
-      "recommendation_flags": "SC",
-      "comment": ""
-    },
-    {
-      "round": 16,
-      "opponent": "royal tea ",
-      "server": "391",
-      "power_billions": 20.0,
-      "members": "20",
-      "recommendation_heroes": [
-        26
-      ],
-      "recommendation_heroes_sort": 26,
-      "recommendation_flags": "any",
-      "comment": "easy"
-    },
-    {
-      "round": 17,
-      "opponent": "bushido warriors",
-      "server": "365",
-      "power_billions": 83.0,
-      "members": "42",
+      "round": 9,
+      "opponent": "bloodbath & beyond",
+      "server": "571",
+      "power_billions": 148.0,
+      "members": "43",
       "recommendation_heroes": [
         18
       ],
       "recommendation_heroes_sort": 18,
-      "recommendation_flags": "SC",
-      "comment": "easy"
-    },
-    {
-      "round": 18,
-      "opponent": "troy ",
-      "server": "391",
-      "power_billions": 208.0,
-      "members": "42",
-      "recommendation_heroes": [
-        7,
-        8
-      ],
-      "recommendation_heroes_sort": 7,
-      "recommendation_flags": "S",
+      "recommendation_flags": "C",
       "comment": ""
     },
     {
-      "round": 19,
-      "opponent": "odyssey",
-      "server": "365",
-      "power_billions": 3.2,
-      "members": "3",
-      "recommendation_heroes": [
-        27
-      ],
-      "recommendation_heroes_sort": 27,
-      "recommendation_flags": "any",
-      "comment": "easy"
-    },
-    {
-      "round": 20,
-      "opponent": "troy ",
-      "server": "391",
-      "power_billions": 208.0,
+      "round": 10,
+      "opponent": "camelot",
+      "server": "332",
+      "power_billions": 315.0,
       "members": "42",
       "recommendation_heroes": [
         9,
@@ -267,62 +138,193 @@ export const data = {
       "comment": ""
     },
     {
-      "round": 21,
-      "opponent": "free fall rats",
-      "server": "370",
-      "power_billions": 372.0,
+      "round": 11,
+      "opponent": "vindicta",
+      "server": "515",
+      "power_billions": 178.0,
+      "members": "43",
+      "recommendation_heroes": [
+        16
+      ],
+      "recommendation_heroes_sort": 16,
+      "recommendation_flags": "C",
+      "comment": ""
+    },
+    {
+      "round": 12,
+      "opponent": "ruthless",
+      "server": "324",
+      "power_billions": 370.0,
       "members": "43",
       "recommendation_heroes": [],
       "recommendation_heroes_sort": 99,
+      "recommendation_flags": "-",
+      "comment": ""
+    },
+    {
+      "round": 13,
+      "opponent": "hydra",
+      "server": "571",
+      "power_billions": 424.0,
+      "members": "43",
+      "recommendation_heroes": [],
+      "recommendation_heroes_sort": 99,
+      "recommendation_flags": "-",
+      "comment": ""
+    },
+    {
+      "round": 14,
+      "opponent": "deus nex",
+      "server": "592",
+      "power_billions": 598.0,
+      "members": "43",
+      "recommendation_heroes": [
+        2
+      ],
+      "recommendation_heroes_sort": 2,
+      "recommendation_flags": "C",
+      "comment": ""
+    },
+    {
+      "round": 15,
+      "opponent": "the red palace",
+      "server": "476",
+      "power_billions": 75.0,
+      "members": "38",
+      "recommendation_heroes": [
+        25
+      ],
+      "recommendation_heroes_sort": 25,
       "recommendation_flags": "*",
-      "comment": "tuck"
+      "comment": ""
+    },
+    {
+      "round": 16,
+      "opponent": "leviathan",
+      "server": "515",
+      "power_billions": 653.0,
+      "members": "43",
+      "recommendation_heroes": [],
+      "recommendation_heroes_sort": 99,
+      "recommendation_flags": "-",
+      "comment": ""
+    },
+    {
+      "round": 17,
+      "opponent": "the empire",
+      "server": "381",
+      "power_billions": 512.0,
+      "members": "43",
+      "recommendation_heroes": [
+        3,
+        4
+      ],
+      "recommendation_heroes_sort": 3,
+      "recommendation_flags": "S",
+      "comment": ""
+    },
+    {
+      "round": 18,
+      "opponent": "fear",
+      "server": "551",
+      "power_billions": 335.0,
+      "members": "43",
+      "recommendation_heroes": [],
+      "recommendation_heroes_sort": 99,
+      "recommendation_flags": "-",
+      "comment": ""
+    },
+    {
+      "round": 19,
+      "opponent": "the foresaken",
+      "server": "495",
+      "power_billions": 258.0,
+      "members": "43",
+      "recommendation_heroes": [
+        11,
+        12
+      ],
+      "recommendation_heroes_sort": 11,
+      "recommendation_flags": "S",
+      "comment": ""
+    },
+    {
+      "round": 20,
+      "opponent": "marijuana",
+      "server": "340",
+      "power_billions": 125.0,
+      "members": "41",
+      "recommendation_heroes": [
+        20
+      ],
+      "recommendation_heroes_sort": 20,
+      "recommendation_flags": "C",
+      "comment": ""
+    },
+    {
+      "round": 21,
+      "opponent": "odin's wrath",
+      "server": "476",
+      "power_billions": 95.0,
+      "members": "24",
+      "recommendation_heroes": [
+        23
+      ],
+      "recommendation_heroes_sort": 23,
+      "recommendation_flags": "C",
+      "comment": ""
     },
     {
       "round": 22,
       "opponent": "firehawx",
       "server": "324",
-      "power_billions": 283.0,
-      "members": "43",
-      "recommendation_heroes": [],
-      "recommendation_heroes_sort": 99,
-      "recommendation_flags": "*",
+      "power_billions": 331.0,
+      "members": "42",
+      "recommendation_heroes": [
+        7,
+        8
+      ],
+      "recommendation_heroes_sort": 7,
+      "recommendation_flags": "S",
       "comment": ""
     },
     {
       "round": 23,
-      "opponent": "nicks pizza",
-      "server": "374",
-      "power_billions": 36.4,
-      "members": "",
+      "opponent": "the roman hearts",
+      "server": "535",
+      "power_billions": 200.0,
+      "members": "40",
+      "recommendation_heroes": [
+        15
+      ],
+      "recommendation_heroes_sort": 15,
+      "recommendation_flags": "C",
+      "comment": ""
+    },
+    {
+      "round": 24,
+      "opponent": "vindicta",
+      "server": "515",
+      "power_billions": 178.0,
+      "members": "43",
+      "recommendation_heroes": [
+        17
+      ],
+      "recommendation_heroes_sort": 17,
+      "recommendation_flags": "C",
+      "comment": ""
+    },
+    {
+      "round": 25,
+      "opponent": "woe the foes",
+      "server": "352",
+      "power_billions": 109.0,
+      "members": "32",
       "recommendation_heroes": [
         22
       ],
       "recommendation_heroes_sort": 22,
-      "recommendation_flags": "SC",
-      "comment": "easy"
-    },
-    {
-      "round": 24,
-      "opponent": "kingsguard",
-      "server": "381",
-      "power_billions": 29.0,
-      "members": "27",
-      "recommendation_heroes": [
-        23
-      ],
-      "recommendation_heroes_sort": 23,
-      "recommendation_flags": "any",
-      "comment": "easy"
-    },
-    {
-      "round": 25,
-      "opponent": "ordo tenebris",
-      "server": "397",
-      "power_billions": 353.0,
-      "members": "41",
-      "recommendation_heroes": [],
-      "recommendation_heroes_sort": 99,
-      "recommendation_flags": "*",
+      "recommendation_flags": "C",
       "comment": ""
     }
   ]

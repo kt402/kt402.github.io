@@ -1,27 +1,36 @@
 import dataclasses
 import json
+import requests
 from prettytable import PrettyTable
 
 # Set these variables based on format of the sheet
 from extraction.extract_model import Recommendations, ACRound, FlagRec
 
-
-FILENAME = "2023-03-ac.csv"
-NUM_HEROES_TO_SAVE = 4
-NUM_ROUNDS_TO_TUCK = 6
+SHEETS_ID = "1FO5qoViBwMe4OWgPwwNCnJi3zKwRHPaa0HXBXqbfSM8"
+SHEET = "MAY-2023"
+NUM_HEROES_TO_SAVE = 1
+NUM_ROUNDS_TO_TUCK = 10
+EXCEPTION_ROUND_FLAG = {
+    1: "S",
+    17: "S",
+    14: "C",
+}
 
 ADDITIONAL_STRATEGIES = \
-    "Flags - use strategy or courage (or brutality if weak) for all rounds except for " + \
-    "rounds we are dropping"
+    "Use strategy for rounds where 2 heroes are denoted. Then courage is preferred.<br><br>" \
+    "We are tucking 7 rounds. 3 very tough rounds we are going hard. Rest is more normal planning.<br>" \
+    "Hitz - use some yellow flags where you see fit.<br>" \
+    "Seren - some of the tougher opponents you can use brutality and medium hero." \
 
 FLAGS_RECS = [
-    FlagRec("S", [10, 18, 20, 3, 12]),
-    FlagRec("SC", [14, 15, 9, 17, 1, 7, 11, 23]),
+    FlagRec("S", [22, 10, 19, 6]),
+    FlagRec("C", [11, 24, 9, 7, 20, 5, 25, 21, 23]),
 ]
-DEFAULT_FLAG_REC = "any"
+DEFAULT_FLAG_REC = "*"
 FLAGS_KEY = {
     "S": "strategy",
-    "SC": "strategy or courage preferred, but brutality if weak"
+    "C": "courage",
+    "*": "any",
 }
 
 COL_IDX_ROUND = 0
@@ -48,14 +57,23 @@ Extraction json format example:
 
 
 def main():
+    get_csv(f"https://docs.google.com/spreadsheets/d/{SHEETS_ID}/gviz/tq?tqx=out:csv&sheet={SHEET}")
     recommendations = Recommendations(
+        header=SHEET,
         num_heroes_to_save=NUM_HEROES_TO_SAVE,
-        num_rounds_tucking=NUM_ROUNDS_TO_TUCK,
+        num_rounds_tucking=NUM_ROUNDS_TO_TUCK - len(EXCEPTION_ROUND_FLAG),
+        num_exception_rounds=len(EXCEPTION_ROUND_FLAG),
         additional_strategies=ADDITIONAL_STRATEGIES,
         flags_key=FLAGS_KEY,
         rounds=calculate_ac_rounds(),
     )
     write_file(recommendations)
+
+
+def get_csv(url: str):
+    r = requests.get(url)
+    with open(f"files/{SHEET}.csv", "wb") as f:
+        f.write(r.content)
 
 
 def flag_rec_lookup() -> dict[int: str]:
@@ -75,10 +93,19 @@ def calculate_ac_rounds() -> list[ACRound]:
     hero = NUM_HEROES_TO_SAVE + 1
 
     for i, ac_round in enumerate(ac_rounds):
-        if i < NUM_ROUNDS_TO_TUCK:
+        if ac_round.round in EXCEPTION_ROUND_FLAG:
+            exception_round_flag = EXCEPTION_ROUND_FLAG[ac_round.round]
+            ac_round.recommendation_flags = exception_round_flag
+            ac_round.recommendation_heroes = [hero]
+            ac_round.recommendation_heroes_sort = hero
+            hero += 1
+            if exception_round_flag == "S":
+                ac_round.recommendation_heroes.append(hero)
+                hero += 1
+        elif i < NUM_ROUNDS_TO_TUCK:
             ac_round.recommendation_heroes = []
             ac_round.recommendation_heroes_sort = 99
-            ac_round.recommendation_flags = "*"
+            ac_round.recommendation_flags = "-"
         else:
             if ac_round.round in flag_lookup:
                 rec_flag = flag_lookup[ac_round.round]
@@ -89,7 +116,6 @@ def calculate_ac_rounds() -> list[ACRound]:
             ac_round.recommendation_heroes = [hero]
             ac_round.recommendation_heroes_sort = hero
             hero += 1
-
             if rec_flag == "S":
                 ac_round.recommendation_heroes.append(hero)
                 hero += 1
@@ -121,10 +147,13 @@ def print_pretty_table(ac_rounds: list[ACRound], title: str):
 def load_ac_rounds_from_csv() -> list[ACRound]:
     ac_rounds: list[ACRound] = []
 
-    with open(f"files/{FILENAME}") as f:
+    with open(f"files/{SHEET}.csv") as f:
         lines = f.readlines()
         for line in lines:
             cols = line.split(',')
+            for i, col in enumerate(cols):
+                cols[i] = col.strip('\"')
+
             if not cols[COL_IDX_ROUND].isdigit():
                 continue
             round_num = int(cols[COL_IDX_ROUND])
@@ -132,7 +161,8 @@ def load_ac_rounds_from_csv() -> list[ACRound]:
             server = cols[COL_IDX_SERVER]
             power_billions = float(cols[COL_IDX_POWER])
             members = cols[COL_IDX_MEMBERS]
-            comment = cols[COL_IDX_COMMENT].strip().lower()
+            comment = ""
+            # comment = cols[COL_IDX_COMMENT].strip().lower()
             ac_rounds.append(ACRound(round_num, opponent, server, power_billions, members, [], 0, "", comment))
     return ac_rounds
 

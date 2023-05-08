@@ -17,8 +17,10 @@ class ACRound:
 
 @dataclass
 class Recommendations:
+    header: str
     num_heroes_to_save: int
     num_rounds_tucking: int
+    num_exception_rounds: int
     additional_strategies: str
     flags_key: dict[str:str]
     rounds: list[ACRound]
