@@ -53,6 +53,8 @@ def calc_2(ac_rounds: list[ACRound]) -> (RecommendationGroup, RecommendationGrou
 
 def calc_for_overrides(ac_rounds: list[ACRound], overrides: dict[int: Override]) -> RecommendationGroup:
     ac_rounds = copy.deepcopy(ac_rounds)
+    ac_rounds.sort(key=lambda r: r.power_billions, reverse=True)
+
     used_heroes: set[int] = set()
     curr_hero = SAVE
     tuck_count = 0

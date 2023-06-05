@@ -18,7 +18,7 @@
       <div class="break-word" v-html="summary()"></div>
     </Panel>
 
-    <DataTable :value="fights" responsiveLayout="scroll" sortField="recommendation_heroes_sort" sort-order="1">
+    <DataTable :value="fights" responsiveLayout="scroll" sortField="round" sort-order="1">
       <Column field="round" header="Rd" sortable></Column>
       <Column field="opponent" header="Opponent"></Column>
       <Column field="recommendation_hero" header="Hero" sortable sortField="recommendation_heroes_sort">
@@ -105,16 +105,14 @@ export default class RecView extends Vue {
         .sortBy(this.fights, (fight: any) => {
           return fight.round;
         })
-        .map(this.fights,
-            (fight: any) => {
-              const heroes = fight.recommendation_heroes.join("&");
-              if (fight.recommendation_heroes.length == 0) {
-                return `${fight.round}_T`
-              } else {
-                return `${fight.round}_${heroes}`;
-              }
-            }
-        )
+        .map((fight: any) => {
+          const heroes = fight.recommendation_heroes.join("&");
+          if (fight.recommendation_heroes.length == 0) {
+            return `${fight.round}_T`
+          } else {
+            return `${fight.round}_${heroes}`;
+          }
+        })
         .join('|');
 
     return fights;
