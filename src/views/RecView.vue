@@ -102,6 +102,9 @@ export default class RecView extends Vue {
     const flags = _.map(this.info.flags_key, (desc, flag) => `${flag}_${desc}`).join('|')
     const info = `round_flag_hero (*=bottom hero and no flag) (${flags}):<br><br>`;
     const fights = _
+        .sortBy(this.fights, (fight: any) => {
+          return fight.round;
+        })
         .map(this.fights,
             (fight: any) => {
               const heroes = fight.recommendation_heroes.join("&");
