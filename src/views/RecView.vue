@@ -23,11 +23,11 @@
       <Column field="opponent" header="Opponent"></Column>
       <Column field="recommendation_hero" header="Hero" sortable sortField="recommendation_heroes_sort">
         <template #body="slotProps">
-          <span v-if="slotProps.data.recommendation_heroes.length === 0 ">-</span>
-          <span v-if="slotProps.data.recommendation_heroes.length !== 0">{{ slotProps.data.recommendation_heroes.join(',') }}</span>
+          <span v-if="slotProps.data.rec.heroes.length === 0 ">-</span>
+          <span v-if="slotProps.data.rec.heroes.length !== 0">{{ slotProps.data.rec.heroes.join(',') }}</span>
         </template>
       </Column>
-      <Column field="recommendation_flags" header="Flags" bodyStyle="text-align: left"></Column>
+      <Column field="rec.flags" header="Flags" bodyStyle="text-align: left"></Column>
       <Column field="power_billions" header="Power" bodyStyle="text-align: left" sortable></Column>
       <Column field="members" header="Mem" bodyStyle="text-align: left"></Column>
     </DataTable>
@@ -66,10 +66,10 @@ import {Prop} from "vue-property-decorator";
   },
 })
 export default class RecView extends Vue {
-  @Prop({ default: 'lords_elites' }) readonly group!: string
+  @Prop({ default: 'rec_group_1' }) readonly group!: string
   info = data
-  group_data = data['lords_elites']
-  fights = data['lords_elites'].rounds;
+  group_data = data['rec_group_1']
+  fights = data['rec_group_1'].rounds;
 
   created() {
     this.group_data = data[this.group];
@@ -79,22 +79,28 @@ export default class RecView extends Vue {
   summary() {
     const rounds = _
         .sortBy(this.fights, (fight: any) => {
-          return fight.recommendation_heroes_sort;
+          return fight.rec.heroes_sort;
         })
         .filter((fight: any) => {
-          return (fight.recommendation_heroes.length > 0)
+          return (fight.rec.heroes.length > 0)
         })
         .map((fight: any) => {
           return fight.round;
         });
 
-    const summ = `
-      |round_hero| -> ${this.roundHero()}
-      <br>
-      |hero_round| -> ${this.heroRound()}
+    let summ = `
+      round_hero: ${this.roundHero()}
+      <br><br>
+      hero_round: ${this.heroRound()}
+    `;
+
+    if (this.info.additional_strategies) {
+      summ += `
       <br><br>
       ${this.info.additional_strategies}
     `;
+    }
+
     return summ;
   }
 
@@ -106,8 +112,8 @@ export default class RecView extends Vue {
           return fight.round;
         })
         .map((fight: any) => {
-          const heroes = fight.recommendation_heroes.join("&");
-          if (fight.recommendation_heroes.length == 0) {
+          const heroes = fight.rec.heroes.join("&");
+          if (fight.rec.heroes.length == 0) {
             return `${fight.round}_T`
           } else {
             return `${fight.round}_${heroes}`;
@@ -124,11 +130,11 @@ export default class RecView extends Vue {
 
     const fights = _
         .sortBy(this.fights, (fight: any) => {
-          return fight.recommendation_heroes_sort;
+          return fight.rec.heroes_sort;
         })
         .map((fight: any) => {
-          const heroes = fight.recommendation_heroes.join("&");
-          if (fight.recommendation_heroes.length == 0) {
+          const heroes = fight.rec.heroes.join("&");
+          if (fight.rec.heroes.length == 0) {
             return `T_${fight.round}`
           } else {
             return `${heroes}_${fight.round}`;

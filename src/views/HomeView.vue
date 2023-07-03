@@ -1,13 +1,14 @@
 <template>
   <div class="home">
-    <Accordion :multiple="true" :activeIndex="0">
-      <AccordionTab header="Lords Elites">
-        <RecView group="lords_elites"/>
-      </AccordionTab>
-      <AccordionTab header="Members">
-        <RecView group="members"/>
-      </AccordionTab>
-    </Accordion>
+<!--    <Accordion :multiple="true" :activeIndex="0">-->
+<!--      <AccordionTab header="Lords Elites">-->
+<!--        <RecView group="lords_elites"/>-->
+<!--      </AccordionTab>-->
+<!--      <AccordionTab header="Members">-->
+<!--        <RecView group="members"/>-->
+<!--      </AccordionTab>-->
+<!--    </Accordion>-->
+    <RecView group="rec_group_1" />
   </div>
 </template>
 
@@ -30,11 +31,11 @@ export default class HomeView extends Vue {
   tabs = [
     {
       title: 'Lords and Elites',
-      key: 'lords_elites',
+      key: 'rec_group_1',
     },
     {
       title: 'Members',
-      key: 'members',
+      key: 'rec_group_2',
     },
 
   ]

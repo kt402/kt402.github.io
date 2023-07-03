@@ -1,22 +1,40 @@
 from dataclasses import dataclass
+from typing import Optional
 
 
 @dataclass
-class ACRound:
+class Recommendation:
+    tuck: bool
+    heroes: list[int]
+    heroes_sort: int
+    flags: str
+
+
+@dataclass
+class ACRoundSheet:
     round: int
     opponent: str
     server: str
     power_billions: float
     members: str
-    recommendation_heroes: [int]
-    recommendation_heroes_sort: int
-    recommendation_flags: str
-    comment: str
+    rec_group_1: Recommendation
+    rec_group_2: Recommendation
+
+
+@dataclass
+class ACRoundRec:
+    round: int
+    opponent: str
+    server: str
+    power_billions: float
+    members: str
+    rec: Recommendation
 
 
 @dataclass
 class RecommendationGroup:
-    rounds: list[ACRound]
+    name: str
+    rounds: list[ACRoundRec]
     save: int
     tuck: int
 
@@ -26,8 +44,8 @@ class Recommendations:
     header: str
     additional_strategies: str
     flags_key: dict[str:str]
-    lords_elites: RecommendationGroup
-    members: RecommendationGroup
+    rec_group_1: RecommendationGroup
+    rec_group_2: Optional[RecommendationGroup]
 
 
 @dataclass
