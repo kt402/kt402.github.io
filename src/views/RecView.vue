@@ -21,7 +21,7 @@
     <DataTable :value="fights" responsiveLayout="scroll" sortField="round" sort-order="1">
       <Column field="round" header="Rd" sortable></Column>
       <Column field="opponent" header="Opponent"></Column>
-      <Column field="recommendation_hero" header="Hero" sortable sortField="recommendation_heroes_sort">
+      <Column field="recommendation_hero" header="Hero" sortable sortField="rec.heroes_sort">
         <template #body="slotProps">
           <span v-if="slotProps.data.rec.heroes.length === 0 ">-</span>
           <span v-if="slotProps.data.rec.heroes.length !== 0">{{ slotProps.data.rec.heroes.join(',') }}</span>

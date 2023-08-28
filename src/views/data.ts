@@ -1,5 +1,5 @@
 export const data = {
-  "header": "07-2023",
+  "header": "08-2023",
   "additional_strategies": "",
   "flags_key": {
     "S": "strategy",
@@ -11,128 +11,25 @@ export const data = {
     "rounds": [
       {
         "round": 1,
-        "opponent": "duellatores",
-        "server": "634",
-        "power_billions": 165.0,
-        "members": "",
-        "rec": {
-          "tuck": false,
-          "heroes": [
-            13
-          ],
-          "heroes_sort": 13,
-          "flags": "c"
-        }
-      },
-      {
-        "round": 2,
         "opponent": "bloodlust",
-        "server": "535",
-        "power_billions": 547.0,
-        "members": "",
-        "rec": {
-          "tuck": true,
-          "heroes": [],
-          "heroes_sort": 999,
-          "flags": ""
-        }
-      },
-      {
-        "round": 3,
-        "opponent": "eaglefang",
-        "server": "649",
-        "power_billions": 135.0,
+        "server": "",
+        "power_billions": 590.0,
         "members": "",
         "rec": {
           "tuck": false,
           "heroes": [
-            20
+            3,
+            4
           ],
-          "heroes_sort": 20,
-          "flags": "c"
-        }
-      },
-      {
-        "round": 4,
-        "opponent": "rebels",
-        "server": "403",
-        "power_billions": 82.7,
-        "members": "",
-        "rec": {
-          "tuck": false,
-          "heroes": [
-            21
-          ],
-          "heroes_sort": 21,
-          "flags": "*"
-        }
-      },
-      {
-        "round": 5,
-        "opponent": "knightmare",
-        "server": "551",
-        "power_billions": 140.0,
-        "members": "",
-        "rec": {
-          "tuck": false,
-          "heroes": [
-            16
-          ],
-          "heroes_sort": 16,
-          "flags": "c"
-        }
-      },
-      {
-        "round": 6,
-        "opponent": "bloodbath&beyond",
-        "server": "571",
-        "power_billions": 159.0,
-        "members": "",
-        "rec": {
-          "tuck": false,
-          "heroes": [
-            14
-          ],
-          "heroes_sort": 14,
-          "flags": "c"
-        }
-      },
-      {
-        "round": 7,
-        "opponent": "legendary",
-        "server": "442",
-        "power_billions": 206.0,
-        "members": "",
-        "rec": {
-          "tuck": false,
-          "heroes": [
-            10,
-            11
-          ],
-          "heroes_sort": 10,
+          "heroes_sort": 3,
           "flags": "s"
         }
       },
       {
-        "round": 8,
-        "opponent": "bloodbath&beyond",
-        "server": "571",
-        "power_billions": 159.0,
-        "members": "",
-        "rec": {
-          "tuck": false,
-          "heroes": [
-            15
-          ],
-          "heroes_sort": 15,
-          "flags": "c"
-        }
-      },
-      {
-        "round": 9,
-        "opponent": "rebels",
-        "server": "403",
-        "power_billions": 82.7,
+        "round": 2,
+        "opponent": "seriously fluffy",
+        "server": "",
+        "power_billions": 124.0,
         "members": "",
         "rec": {
           "tuck": false,
@@ -140,98 +37,14 @@ export const data = {
             22
           ],
           "heroes_sort": 22,
-          "flags": "*"
-        }
-      },
-      {
-        "round": 10,
-        "opponent": "freefall rats",
-        "server": "365",
-        "power_billions": 611.0,
-        "members": "",
-        "rec": {
-          "tuck": true,
-          "heroes": [],
-          "heroes_sort": 999,
-          "flags": ""
-        }
-      },
-      {
-        "round": 11,
-        "opponent": "dominion",
-        "server": "515",
-        "power_billions": 213.0,
-        "members": "",
-        "rec": {
-          "tuck": false,
-          "heroes": [
-            9
-          ],
-          "heroes_sort": 9,
           "flags": "c"
         }
       },
       {
-        "round": 12,
-        "opponent": "resonance",
-        "server": "616",
-        "power_billions": 19.8,
-        "members": "",
-        "rec": {
-          "tuck": false,
-          "heroes": [
-            26
-          ],
-          "heroes_sort": 26,
-          "flags": "*"
-        }
-      },
-      {
-        "round": 13,
-        "opponent": "darkside",
-        "server": "649",
-        "power_billions": 314.0,
-        "members": "",
-        "rec": {
-          "tuck": true,
-          "heroes": [],
-          "heroes_sort": 999,
-          "flags": ""
-        }
-      },
-      {
-        "round": 14,
-        "opponent": "seriously fluffy",
-        "server": "616",
-        "power_billions": 140.0,
-        "members": "",
-        "rec": {
-          "tuck": false,
-          "heroes": [
-            17
-          ],
-          "heroes_sort": 17,
-          "flags": "c"
-        }
-      },
-      {
-        "round": 15,
-        "opponent": "fvk",
-        "server": "551",
-        "power_billions": 593.0,
-        "members": "",
-        "rec": {
-          "tuck": true,
-          "heroes": [],
-          "heroes_sort": 999,
-          "flags": ""
-        }
-      },
-      {
-        "round": 16,
-        "opponent": "phoenix",
-        "server": "442",
-        "power_billions": 70.5,
+        "round": 3,
+        "opponent": "celestial rising",
+        "server": "",
+        "power_billions": 118.0,
         "members": "",
         "rec": {
           "tuck": false,
@@ -239,29 +52,27 @@ export const data = {
             23
           ],
           "heroes_sort": 23,
-          "flags": "*"
-        }
-      },
-      {
-        "round": 17,
-        "opponent": "knightmare",
-        "server": "551",
-        "power_billions": 140.0,
-        "members": "",
-        "rec": {
-          "tuck": false,
-          "heroes": [
-            18
-          ],
-          "heroes_sort": 18,
           "flags": "c"
         }
       },
       {
-        "round": 18,
-        "opponent": "warlords",
-        "server": "421",
-        "power_billions": 27.3,
+        "round": 4,
+        "opponent": "orthodox",
+        "server": "",
+        "power_billions": 666.0,
+        "members": "",
+        "rec": {
+          "tuck": true,
+          "heroes": [],
+          "heroes_sort": 999,
+          "flags": ""
+        }
+      },
+      {
+        "round": 5,
+        "opponent": "red palace",
+        "server": "",
+        "power_billions": 95.0,
         "members": "",
         "rec": {
           "tuck": false,
@@ -269,44 +80,43 @@ export const data = {
             25
           ],
           "heroes_sort": 25,
-          "flags": "*"
-        }
-      },
-      {
-        "round": 19,
-        "opponent": "atlantis",
-        "server": "634",
-        "power_billions": 7.55,
-        "members": "",
-        "rec": {
-          "tuck": false,
-          "heroes": [
-            27
-          ],
-          "heroes_sort": 27,
-          "flags": "*"
-        }
-      },
-      {
-        "round": 20,
-        "opponent": "freefall rats",
-        "server": "365",
-        "power_billions": 611.0,
-        "members": "",
-        "rec": {
-          "tuck": false,
-          "heroes": [
-            5
-          ],
-          "heroes_sort": 5,
           "flags": "c"
         }
       },
       {
-        "round": 21,
-        "opponent": "seriously fluffy",
-        "server": "616",
-        "power_billions": 140.0,
+        "round": 6,
+        "opponent": "leviathan",
+        "server": "",
+        "power_billions": 969.0,
+        "members": "",
+        "rec": {
+          "tuck": true,
+          "heroes": [],
+          "heroes_sort": 999,
+          "flags": ""
+        }
+      },
+      {
+        "round": 7,
+        "opponent": "legendary",
+        "server": "",
+        "power_billions": 228.0,
+        "members": "",
+        "rec": {
+          "tuck": false,
+          "heroes": [
+            11,
+            12
+          ],
+          "heroes_sort": 11,
+          "flags": "s"
+        }
+      },
+      {
+        "round": 8,
+        "opponent": "legendary",
+        "server": "",
+        "power_billions": 228.0,
         "members": "",
         "rec": {
           "tuck": false,
@@ -318,40 +128,248 @@ export const data = {
         }
       },
       {
-        "round": 22,
+        "round": 9,
         "opponent": "legendary",
-        "server": "442",
-        "power_billions": 206.0,
+        "server": "",
+        "power_billions": 228.0,
         "members": "",
         "rec": {
           "tuck": false,
           "heroes": [
-            12
+            20,
+            21
           ],
-          "heroes_sort": 12,
+          "heroes_sort": 20,
+          "flags": "s"
+        }
+      },
+      {
+        "round": 10,
+        "opponent": "formersaken",
+        "server": "",
+        "power_billions": 77.0,
+        "members": "",
+        "rec": {
+          "tuck": false,
+          "heroes": [
+            29
+          ],
+          "heroes_sort": 29,
           "flags": "c"
+        }
+      },
+      {
+        "round": 11,
+        "opponent": "celestial rising",
+        "server": "",
+        "power_billions": 118.0,
+        "members": "",
+        "rec": {
+          "tuck": false,
+          "heroes": [
+            24
+          ],
+          "heroes_sort": 24,
+          "flags": "c"
+        }
+      },
+      {
+        "round": 12,
+        "opponent": "o.t.",
+        "server": "",
+        "power_billions": 505.0,
+        "members": "",
+        "rec": {
+          "tuck": true,
+          "heroes": [],
+          "heroes_sort": 999,
+          "flags": ""
+        }
+      },
+      {
+        "round": 13,
+        "opponent": "dire retalliation",
+        "server": "",
+        "power_billions": 33.0,
+        "members": "",
+        "rec": {
+          "tuck": false,
+          "heroes": [
+            31
+          ],
+          "heroes_sort": 31,
+          "flags": "*"
+        }
+      },
+      {
+        "round": 14,
+        "opponent": "wolverines",
+        "server": "",
+        "power_billions": 90.0,
+        "members": "",
+        "rec": {
+          "tuck": false,
+          "heroes": [
+            27
+          ],
+          "heroes_sort": 27,
+          "flags": "c"
+        }
+      },
+      {
+        "round": 15,
+        "opponent": "red palace",
+        "server": "",
+        "power_billions": 95.0,
+        "members": "",
+        "rec": {
+          "tuck": false,
+          "heroes": [
+            28
+          ],
+          "heroes_sort": 28,
+          "flags": "c"
+        }
+      },
+      {
+        "round": 16,
+        "opponent": "ironic maiden",
+        "server": "",
+        "power_billions": 445.0,
+        "members": "",
+        "rec": {
+          "tuck": false,
+          "heroes": [
+            15,
+            16
+          ],
+          "heroes_sort": 15,
+          "flags": "s"
+        }
+      },
+      {
+        "round": 17,
+        "opponent": "event horizon",
+        "server": "",
+        "power_billions": 680.0,
+        "members": "",
+        "rec": {
+          "tuck": true,
+          "heroes": [],
+          "heroes_sort": 999,
+          "flags": ""
+        }
+      },
+      {
+        "round": 18,
+        "opponent": "excalibur",
+        "server": "",
+        "power_billions": 65.0,
+        "members": "",
+        "rec": {
+          "tuck": false,
+          "heroes": [
+            28
+          ],
+          "heroes_sort": 28,
+          "flags": "c"
+        }
+      },
+      {
+        "round": 19,
+        "opponent": "event horizon",
+        "server": "",
+        "power_billions": 680.0,
+        "members": "",
+        "rec": {
+          "tuck": false,
+          "heroes": [
+            9,
+            10
+          ],
+          "heroes_sort": 9,
+          "flags": "s"
+        }
+      },
+      {
+        "round": 20,
+        "opponent": "dragons & hades",
+        "server": "",
+        "power_billions": 776.0,
+        "members": "",
+        "rec": {
+          "tuck": false,
+          "heroes": [
+            5,
+            6
+          ],
+          "heroes_sort": 5,
+          "flags": "s"
+        }
+      },
+      {
+        "round": 21,
+        "opponent": "rag tags",
+        "server": "",
+        "power_billions": 436.0,
+        "members": "",
+        "rec": {
+          "tuck": true,
+          "heroes": [],
+          "heroes_sort": 999,
+          "flags": ""
+        }
+      },
+      {
+        "round": 22,
+        "opponent": "troy",
+        "server": "",
+        "power_billions": 267.0,
+        "members": "",
+        "rec": {
+          "tuck": false,
+          "heroes": [
+            17,
+            18
+          ],
+          "heroes_sort": 17,
+          "flags": "s"
         }
       },
       {
         "round": 23,
-        "opponent": "fvk",
-        "server": "551",
-        "power_billions": 593.0,
+        "opponent": "o.t.",
+        "server": "",
+        "power_billions": 505.0,
         "members": "",
         "rec": {
           "tuck": false,
           "heroes": [
-            6
+            13,
+            14
           ],
-          "heroes_sort": 6,
-          "flags": "c"
+          "heroes_sort": 13,
+          "flags": "s"
         }
       },
       {
         "round": 24,
-        "opponent": "the jungle",
-        "server": "495",
-        "power_billions": 249.0,
+        "opponent": "fvk",
+        "server": "",
+        "power_billions": 673.0,
+        "members": "",
+        "rec": {
+          "tuck": true,
+          "heroes": [],
+          "heroes_sort": 999,
+          "flags": ""
+        }
+      },
+      {
+        "round": 25,
+        "opponent": "fvk",
+        "server": "",
+        "power_billions": 673.0,
         "members": "",
         "rec": {
           "tuck": false,
@@ -362,25 +380,10 @@ export const data = {
           "heroes_sort": 7,
           "flags": "s"
         }
-      },
-      {
-        "round": 25,
-        "opponent": "phoenix",
-        "server": "442",
-        "power_billions": 70.5,
-        "members": "",
-        "rec": {
-          "tuck": false,
-          "heroes": [
-            24
-          ],
-          "heroes_sort": 24,
-          "flags": "*"
-        }
       }
     ],
-    "save": 4,
-    "tuck": 4
+    "save": 2,
+    "tuck": 6
   },
   "rec_group_2": null
 } as any;
